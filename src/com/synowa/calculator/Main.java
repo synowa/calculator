@@ -19,7 +19,7 @@ public class Main {
         };
 
         CalculateHelper helper = new CalculateHelper();
-        for (String statement:statements) {
+        for (String statement : statements) {
             try {
                 helper.process(statement);
                 System.out.println(helper);
@@ -31,12 +31,13 @@ public class Main {
         }
 
     }
-    static void  useMathEquation() {
+
+    static void useMathEquation() {
         MathEquation[] equations = new MathEquation[4];
-        equations[0] = new MathEquation('d',100.0d, 50.0d);
-        equations[1] = new MathEquation('a',25.0d, 92.0d);
-        equations[2] = new MathEquation('s',225.0d, 17.0d);
-        equations[3] = new MathEquation('m',11.0d, 3.0d);
+        equations[0] = new MathEquation('d', 100.0d, 50.0d);
+        equations[1] = new MathEquation('a', 25.0d, 92.0d);
+        equations[2] = new MathEquation('s', 225.0d, 17.0d);
+        equations[3] = new MathEquation('m', 11.0d, 3.0d);
 
         for (MathEquation equation : equations) {
             equation.execute();
@@ -64,7 +65,7 @@ public class Main {
         System.out.print("result=");
         System.out.println(equationOverload.getResult());
 
-        equationOverload.execute((double)leftInt, (double)rightInt);
+        equationOverload.execute((double) leftInt, (double) rightInt);
         System.out.print("result=");
         System.out.println(equationOverload.getResult());
 
@@ -79,7 +80,7 @@ public class Main {
                 new Subtracter(225.0d, 17.0d),
                 new Multiplier(11.0d, 3.0d)
         };
-        for(CalculateBase calculator:calculators) {
+        for (CalculateBase calculator : calculators) {
             calculator.calculate();
             System.out.print("result=");
             System.out.println(calculator.getResult());
