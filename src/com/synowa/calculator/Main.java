@@ -5,7 +5,26 @@ public class Main {
     public static void main(String[] args) {
 //        useMathEquation():
 //        useCalculatorBase();
+//        useCalculateHelper();
 
+        String[] statements = {
+                "add 25.0 92.0", //25.0 +92.0 = 117.0
+                "power 5.0 2.0" // 5.0 ^ 2.0 = 25
+        };
+
+        DynamicHelper helper = new DynamicHelper(new MathProcessing[] {
+                new Adder (),
+                new PowerOf()
+        });
+
+        for(String statement:statements) {
+            String output = helper.process(statement);
+            System.out.println(output);
+        }
+
+    }
+
+        static void useCalculateHelper() {
         String[] statements = {
                 "add 1.0", // Error: incorrect number of values
                 "add xx 25.0", // Error: non-numeric data
